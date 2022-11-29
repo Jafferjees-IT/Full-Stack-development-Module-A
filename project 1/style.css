@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 
+:root{
+    --success-color: green;
+    --error-color: red;
+
+}
+
 *{
     box-sizing: border-box;
 
@@ -56,4 +62,38 @@ h2{
     outline: 0px;
     border-color: black;
     
+}
+
+.form-control.success input{
+    border-color: var(--success-color);
+     
+}
+.form-control.error input{
+    border-color: var(--error-color);
+     
+}
+
+.form-control small{
+    color:yellow;
+    bottom: 0px;
+    left:0px;
+    visibility: hidden;
+}
+
+.form-control.error small{
+    visibility: visible;
+}
+
+.form button{
+    cursor: pointer;
+    background-color:#786fa6;
+    border: 2px #786fa6;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    color: white;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+
 }
