@@ -5,11 +5,11 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 =document.getElementById('password2');
 
-// functions
+// functions start from 1:00:00
 function showError(input, message) {
     const formcontrol = input.parentElement;
-    formcontrol.
-    alert(formcontrol.value);
+    formcontrol.classname;
+    
 }
 
 // Event Listener
