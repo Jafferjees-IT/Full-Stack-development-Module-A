@@ -26,13 +26,17 @@ function showSuccess(input){
 
 }
 
-function isValidEmail(email){
-    return String(email)
-    .toLowerCase()
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
+// Email validation process
+function checkEmail(input){
+    const re =  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    if (re.test(input.value.trim())){
+            showSuccess(input);
+    }
+    else{
+        showError(input, `Please provide a valid email`);
+    }
 }
+
 // Function Check reqiurd data
 function checkRequird(inputArray){
     inputArray.forEach(function(input){
@@ -47,10 +51,27 @@ function checkRequird(inputArray){
        }
     });
 }
+
 // Function to det the id of the input field
 function getFieldID(input){
-
     return input.id.charAt(0).toUpperCase()+input.id.slice(1);
+}
+
+//function to check length
+function checklength(input, min, max){
+    if(input.value.length < min || input.value.length > max){
+        showError(input,`${getFieldID(input)} need to be at least ${min} and less then ${max} Characters`);
+    }
+    else{
+        showSuccess(input);
+    }
+}
+
+//Function to check password and confirm password 
+function checkPasswordMatch(input1, input2){
+    if(input1.value !== input2.value){
+        showError(input2, "Password don't match");
+    }
 }
 
 // Event Listener
@@ -62,4 +83,9 @@ form.addEventListener('submit', function(e) {
     // Check required field not empty
     // check if name is empty
     checkRequird([username,email,password,password2])
+    checklength(username,3,10);
+    checklength(password,6,30);
+    checkEmail(email);
+    checkPasswordMatch(password,password2)
+
 });
