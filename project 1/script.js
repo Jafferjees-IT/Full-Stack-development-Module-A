@@ -10,7 +10,7 @@ function showError(input, message){
     // Get the parent element of the input field (.from-control)
     const formControl = input.parentElement;
     // override the class  - add error
-    formControl.className = 'from-Control error'
+    formControl.className = 'form-control error';
     // Get the small element for the error message
     const small = formControl.querySelector('small');
     // override the text for small message
@@ -22,7 +22,7 @@ function showSuccess(input){
     // Get the parent element of the input field (.from-control)
     const formControl = input.parentElement;
     // override the class  - add error
-    formControl.className = 'from-Control success'
+    formControl.className = 'form-control success';
 
 }
 
@@ -33,13 +33,31 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     // check if name is empty
-    if(username.value === '')
-    {
+    if(username.value === '') {
         showError(username, 'Username is Requird');
     }
-    else
-    {
+    else {
         showSuccess(username);
     }
    
+    if(email.value === '') {
+        showError(email, 'Email is Requird');
+    }
+    else {
+        showSuccess(email);
+    }
+
+    if(password.value === '') {
+        showError(password, 'Password is Requird');
+    }
+    else {
+        showSuccess(password);
+    }
+
+    if(password2.value === '') {
+        showError(password2, 'Confirm Password1 is Requird');
+    }
+    else {
+        showSuccess(password2);
+    }
 });
