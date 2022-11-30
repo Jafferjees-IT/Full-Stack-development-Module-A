@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+:root {
+    --success-color: green;
+    --error-color: red;
+
+}
 * {
     box-sizing: border-box;
 
@@ -13,7 +18,7 @@ body{
     margin: 0px;
 }
 .container{
-    background-color:#574b90;
+    background-color:#dbd8e9;
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .5);
     width: 400px;
@@ -43,7 +48,7 @@ h2{
 
 .form-control input
 {
-    border: 2px solid beige;
+    border: 2px solid var(--success-color)
     border-radius: 5px;
     display: block;
     width: 100%;
@@ -68,10 +73,12 @@ h2{
 }
 
 .form-control small{
-    color:yellow;
+    color: var(--error-color);
     bottom: 0px;
     left:0px;
     visibility: hidden;
+    position: absolute;
+
 }
 
 .form-control.error small{
