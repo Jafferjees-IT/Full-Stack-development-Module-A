@@ -1,21 +1,3 @@
-<<<<<<< Updated upstream
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
-
-:root{
-    --success-color: green;
-    --error-color: red;
-
-}
-
-*{
-    box-sizing: border-box;
-
-}
-
-body{
-    background-color:#786fa6;
-    font-family: 'Raleway', sans-serif;
-=======
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 * {
     box-sizing: border-box;
@@ -24,12 +6,10 @@ body{
 body{
     background-color:rgb(248, 231, 231);
     font-family: 'Roboto Condensed', sans-serif;
->>>>>>> Stashed changes
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-<<<<<<< Updated upstream
     margin: 0px;
 }
 .container{
@@ -48,76 +28,34 @@ h2{
     padding: 30px 40px; 
 }
 
-=======
-    margin: 0;
-
-}
-
-.container
-{
-     background-color:beige;
-     border-radius: 15px;
-     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-     width: 450px;
-}
-
-h2{
-text-align: center;
-color: rgb(13, 13, 49);
-margin: 0 0 20px;
-}
-.form{
-    padding: 30px 40px;
-
-
-}
->>>>>>> Stashed changes
 .form-control{
     margin-bottom: 10px;
     padding-bottom: 20px;
     position: relative;
-<<<<<<< Updated upstream
 }
 
 .form-control label{
     color: aliceblue;
-=======
-
-}
-
-.form-control label{
-    color: brown;
->>>>>>> Stashed changes
     display: block;
     margin-bottom: 5px;
 
 }
 
-<<<<<<< Updated upstream
-.form-control input{
-    border: 2px solid aliceblue;
-=======
 .form-control input
 {
     border: 2px solid beige;
->>>>>>> Stashed changes
     border-radius: 5px;
     display: block;
     width: 100%;
     padding: 10px;
-<<<<<<< Updated upstream
-    font-size: 15px;
-=======
     font-size: 14px;
 
->>>>>>> Stashed changes
 }
 
 .form-control input:focus{
     outline: 0px;
     border-color: black;
     
-<<<<<<< Updated upstream
 }
 
 .form-control.success input{
@@ -153,6 +91,3 @@ margin: 0 0 20px;
     margin-top: 10px;
 
 }
-=======
-}
->>>>>>> Stashed changes
