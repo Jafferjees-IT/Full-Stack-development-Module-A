@@ -33,25 +33,6 @@ function isValidEmail(email){
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 }
-// Function Check reqiurd data
-function checkRequird(inputArray){
-    inputArray.forEach(function(input){
-       if(input.value===''){
-        //showError(input, input.id +' is Required');
-       // showError(input, `${input.id} is Required`);
-       showError(input, `${getFieldID(input)} is Required`);
-       }
-       else
-       {
-        showSuccess(input);
-       }
-    });
-}
-// Function to det the id of the input field
-function getFieldID(input){
-
-    return input.id.charAt(0).toUpperCase()+input.id.slice(1);
-}
 
 // Event Listener
 // Create event listener for Submit Button
@@ -61,5 +42,33 @@ form.addEventListener('submit', function(e) {
 
     // Check required field not empty
     // check if name is empty
-    checkRequird([username,email,password,password2])
+    if(username.value === '') {
+        showError(username, 'Username is Requird');
+    }
+    else {
+        showSuccess(username);
+    }
+   
+    if(email.value === '') {
+        showError(email, 'Email is Requird');
+    } else if(!isValidEmail(email.value)) {
+        showError(email, 'Invalid Email Address');
+    }
+    else {
+        showSuccess(email);
+    }
+
+    if(password.value === '') {
+        showError(password, 'Password is Requird');
+    }
+    else {
+        showSuccess(password);
+    }
+
+    if(password2.value === '') {
+        showError(password2, 'Confirm Password1 is Requird');
+    }
+    else {
+        showSuccess(password2);
+    }
 });
