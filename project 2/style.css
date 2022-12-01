@@ -32,8 +32,8 @@ body{
 
 .seat{
     background-color: #079992;
-    height: 12px;
-    width: 15px;
+    height: 30px;
+    width: 40px;
     margin: 3px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
