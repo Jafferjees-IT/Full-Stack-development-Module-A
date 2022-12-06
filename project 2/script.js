@@ -6,10 +6,12 @@ const total = document.getElementById('total');
 const movieSelect = document.getElementById('Movie');
 let ticketPrice = +movieSelect.value; // if we plece + sign its convert into number
 
+populateUI();
+
 function updateSelectedCount(){
     const selectedSeats = document.querySelectorAll('.row .seat.selected'); // Get Selected list
     const seatsIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat));  //  copy selected Seats make Comma Saprated list and get seat number
-    console.log(seatsIndex);
+    
     const SelectedSeatsCount = selectedSeats.length; // Get Numbers of selected seat
     count.innerText = SelectedSeatsCount;
     total.innerText = SelectedSeatsCount *  ticketPrice;
@@ -20,6 +22,22 @@ function setMovieData(movieIndex, moviePrice) {
     localStorage.setItem('selectedMoiveIndex', movieIndex);
     localStorage.setItem('selectedMoviePrice', moviePrice);
 
+}
+
+// Get data from local storage
+function populateUI(){
+    const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats')); //string to array
+    if(selectedSeats !==null && selectedSeats.length>0){
+        seats.forEach((seat, index) =>{
+            if(selectedSeats.indexOf(index)>-1)
+            seat.classList.add('selected')
+        })
+    };
+
+    const selectedMoiveIndex = localStorage.getItem('selectedMoiveIndex');
+    if(selectedMoiveIndex !==null) {
+        movieSelect.selectedIndex = selectedMoiveIndex;
+    }
 }
 
 // Event Listener for container to check and click on seat
@@ -40,6 +58,8 @@ movieSelect.addEventListener('change',(e) => {
     setMovieData(e.target.selectedIndex, e.target.value);
     updateSelectedCount();
 })
+
+updateSelectedCount();
 
 
 
